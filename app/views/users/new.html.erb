@@ -5,16 +5,16 @@
     <%= form_for(@user) do |f| %>
     　<%= render 'shared/error_messages', object: f.object %>
     
-      <%= f.label :name %>
+      <%= f.label :name, class: "col-md-2" %>
       <%= f.text_field :name %>
       
-      <%= f.label :email %>
+      <%= f.label :email, class: "col-md-2" %>
       <%= f.text_field :email %>
       
-      <%= f.label :password %>
+      <%= f.label :password, class: "col-md-2" %>
       <%= f.password_field :password %>
       
-      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.label :password_confirmation, "Confirmation", class: "col-md-2" %>
       <%= f.password_field :password_confirmation %>
       
       <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
