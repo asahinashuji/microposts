@@ -33,18 +33,20 @@ class UsersController < ApplicationController
     end
   end
   
+  def all_users
+    @user = User.find(params[:id])
+    @all_users = User.all
+    render 'all_users'
+  end
+  
   def followings
     @user = User.find(params[:id])
-    if @user == current_user
-      @users = @user.following_users
-    end
+    @users = @user.following_users
   end
   
   def followers
     @user = User.find(params[:id])
-    if @user == current_user
-      @users = @user.follower_users
-    end
+    @users = @user.follower_users
   end
       
   private

@@ -25,3 +25,11 @@
     <p style="overflow:hidden;"><span class="col-md-2">居住地</span><span class="panel panel-default col-md-10"><%= @user.area %></span></p>
   </div>
 </div>    
+<div class="row">
+  <div class="col-md-6 col-md-offset-2">
+    <p>
+      <%= link_to "follower", followings_user_path(@user.id), class: "btn btn-primary col-md-2" %>
+      <%= link_to "followed", followers_user_path(@user.id), class: "btn btn-primary col-md-2 col-md-offset-1" %>
+    </p>
+  </div>
+</div>

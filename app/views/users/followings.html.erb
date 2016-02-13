@@ -12,9 +12,9 @@
     <% @users.each do |following| %>
     <div class="col-md-4", style="height:150px; border:1px solid; border-radius:10px; padding:5px;">
       <%= gravatar_for following %>
-      <%= following.name %>
+      <%= link_to following.name, user_path(following.id), class: "btn btn-xs btn-primary" %>
       <br>
-      <%= following.profile %>
+      <%= truncate following.profile, :length=>60 %>
     </div>
     <% end %>
   </div>
