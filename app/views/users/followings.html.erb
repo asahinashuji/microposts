@@ -1,0 +1,22 @@
+<div class="row">
+  <aside class="col-md-3">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-9">
+    <h2 style="font-weight:bold; font-size: 2em;">フォローしているユーザー</h2>
+    <% @users.each do |following| %>
+    <div class="col-md-4", style="height:150px; border:1px solid; border-radius:10px; padding:5px;">
+      <%= gravatar_for following %>
+      <%= link_to following.name, user_path(following.id), class: "btn btn-xs btn-primary" %>
+      <br>
+      <%= truncate following.profile, :length=>60 %>
+    </div>
+    <% end %>
+  </div>
+</div>
+      
