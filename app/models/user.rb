@@ -40,5 +40,12 @@ class User < ActiveRecord::Base
   def feed_items
     Micropost.where(user_id: following_user_ids + [self.id])
   end
+  
+  has_many :retweet_micropost, class_name: "Microposts",
+                               foreign_key: "retweet_id",
+                               dependent: :destroy
+  def retweet(other_micropost)
+    retweet_micropost.find_or_create_by(retweet_id: other_micropost.id)
+  end
 end
                      

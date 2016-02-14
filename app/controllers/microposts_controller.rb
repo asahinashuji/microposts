@@ -20,6 +20,10 @@ class MicropostsController < ApplicationController
       redirect_to request.referrer || root_url
   end
   
+  def retweet
+    @retweet = other_user.microposts.find_by(id: params[:id])
+  end
+  
   private
   def micropost_params
     params.require(:micropost).permit(:content)
