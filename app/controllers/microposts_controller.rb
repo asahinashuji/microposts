@@ -25,7 +25,6 @@ class MicropostsController < ApplicationController
     current_user.microposts.create!(micropost_id: origin_tweet.id, content: "RT:" + origin_tweet.content)
     redirect_to root_path(current_user)
   end
-
   
   private
   def micropost_params
